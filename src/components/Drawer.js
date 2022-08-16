@@ -1,14 +1,32 @@
 import React from "react";
-import { Menu, Button } from "react-daisyui";
+import { Link } from "react-router-dom";
+import { Menu, Button, Divider } from "react-daisyui";
 
-export default function Drawer() {
+export default function Drawer(props) {
   return (
     <Menu
-      className="p-4 overflow-y-auto w-80 bg-base-100 text-base-content"
+      className="bg-base-100 text-base-content overflow-y-auto w-80 p-2"
       vertical={true}
     >
-      <Button variant="ghost">Menu Item 1</Button>
-      <Button variant="ghost">Menu Item 2</Button>
+      <Link to="/">
+        <Button color="ghost" className="normal-case text-xl">
+          {props.title}
+        </Button>
+      </Link>
+
+      <Divider className="h-1 my-2 mx-4" />
+      {props.pages.map((page) => (
+        <Link to={page.path} key={page.name}>
+          <Button
+            key={page.name}
+            color="ghost"
+            className="w-full justify-start"
+            onClick={props.toggleDrawer}
+          >
+            {page.name}
+          </Button>
+        </Link>
+      ))}
     </Menu>
   );
 }

@@ -5,10 +5,18 @@ import {
   CodeIcon,
 } from "@heroicons/react/outline";
 
+import { routes } from "./routes";
+
 // app config
 
-const config = {
-  app_name: "daisyUI",
+export const config = {
+  title: "daisyUI",
+  home: routes.home,
+  pages: [
+    routes.blog,
+    routes.about,
+    routes.settings
+  ],
   themes: [
     {
       name: "Light",
@@ -32,5 +40,3 @@ const config = {
     },
   ],
 };
-
-export default config;

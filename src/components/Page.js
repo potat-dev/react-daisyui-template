@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+
+import Navbar from "./Navbar";
 import { Drawer } from "react-daisyui";
 import { default as DrawerContent } from "./Drawer";
-import Navbar from "./Navbar";
 
 export default function Page(props) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -13,14 +15,21 @@ export default function Page(props) {
     <Drawer
       open={drawerOpen}
       onClickOverlay={toggleDrawer}
-      side={<DrawerContent />}
+      side={
+        <DrawerContent
+          title={props.config.title}
+          pages={props.config.pages}
+          toggleDrawer={toggleDrawer}
+        />
+      }
     >
       <Navbar
         toggleMenu={toggleDrawer}
-        title={props.config.app_name}
+        title={props.config.title}
+        pages={props.config.pages}
         themes={props.config.themes}
       />
-      {props.children}
+      <Outlet />
     </Drawer>
   );
 }

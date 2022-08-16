@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar as Nav, Button, Menu } from "react-daisyui";
 import { MenuIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navbar(props) {
@@ -16,27 +17,32 @@ export default function Navbar(props) {
           <div className="hidden md:block lg:hidden normal-case">Menu</div>
         </Button>
 
-        <Button color="ghost" className=" hidden lg:block normal-case text-xl">
-          {props.title}
-        </Button>
+        <Link to="/">
+          <Button
+            color="ghost"
+            className=" hidden lg:block normal-case text-xl"
+          >
+            {props.title}
+          </Button>
+        </Link>
       </Nav.Start>
 
       <Nav.Center>
         <Menu horizontal={true} className="hidden lg:flex gap-2">
-          <Button color="ghost" className="normal-case">
-            Item 1
-          </Button>
-          <Button color="ghost" className="normal-case">
-            Item 2
-          </Button>
-          <Button color="ghost" className="normal-case">
-            Item 3
-          </Button>
+          {props.pages.map((page) => (
+            <Link key={page.id} to={page.path}>
+              <Button color="ghost" className="normal-case">
+                {page.name}
+              </Button>
+            </Link>
+          ))}
         </Menu>
 
-        <Button color="ghost" className="flex lg:hidden normal-case text-xl">
-          {props.title}
-        </Button>
+        <Link to="/">
+          <Button color="ghost" className="flex lg:hidden normal-case text-xl">
+            {props.title}
+          </Button>
+        </Link>
       </Nav.Center>
 
       <Nav.End className="navbar-end">
