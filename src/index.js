@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Page from "./components/Page";
 import { config } from "./config";
@@ -11,7 +11,7 @@ import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
+  <Router>
     <Routes>
       <Route exact path="/" element={<Page config={config} />}>
         {Object.entries(routes).map(([key, route]) => (
@@ -19,5 +19,5 @@ root.render(
         ))}
       </Route>
     </Routes>
-  </BrowserRouter>
+  </Router>
 );

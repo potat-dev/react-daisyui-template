@@ -9,7 +9,11 @@ export default function Drawer(props) {
       vertical={true}
     >
       <Link to="/">
-        <Button color="ghost" className="normal-case text-xl">
+        <Button
+          color="ghost"
+          className="normal-case text-xl"
+          onClick={props.toggleDrawer}
+        >
           {props.title}
         </Button>
       </Link>

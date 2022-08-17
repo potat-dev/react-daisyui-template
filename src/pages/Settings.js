@@ -1,5 +1,5 @@
 import React from 'react'
-import TestPage from '../components/TestPage'
+import TestPage from '../test/Page'
 
 export default function Settings() {
   return (

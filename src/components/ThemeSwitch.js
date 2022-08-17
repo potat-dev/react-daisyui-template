@@ -24,7 +24,7 @@ export default function ThemeSwitch(props) {
       </label>
       <div
         tabIndex="0"
-        className="menu dropdown-content rounded-box shadow-md bg-base-300 p-2 w-52 mt-4"
+        className="menu dropdown-content rounded-box shadow-md bg-base-300 p-2 w-52 mt-5"
       >
         {props.themes.map((theme) => {
           return (
