@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-bg-base-light-100: hsl(var(--bc) / 0.1);
+    --color-bg-base-light-200: hsl(var(--bc) / 0.2);
+    --color-bg-base-light-300: hsl(var(--bc) / 0.3);
+  }
+  
+  .bg-base-light-100 {
+    background-color: var(--color-bg-base-light-100);
+  }
+
+  .bg-base-light-200 {
+    background-color: var(--color-bg-base-light-200);
+  }
+
+  .bg-base-light-300 {
+    background-color: var(--color-bg-base-light-300);
+  }
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 16px;
@@ -9,8 +29,8 @@
   }
 
   .scrollbar-sm::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+    width: 4px;
+    height: 4px;
   }
 
   .scrollbar::-webkit-scrollbar-track,
@@ -19,7 +39,7 @@
   }
 
   .scrollbar-sm::-webkit-scrollbar-thumb {
-    background: hsl(var(--bc) / 0.1);
+    background: var(--color-bg-base-light-100);
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
@@ -31,7 +51,7 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--bc) / 0.1);
+    background: var(--color-bg-base-light-100);
   }
 
   /* to fix not pixel-perfect button group */

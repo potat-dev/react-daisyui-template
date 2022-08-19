@@ -18,7 +18,7 @@ export default function Drawer(props) {
         </Button>
       </Link>
 
-      <Divider className="h-1 my-2 mx-4" />
+      <Divider className="h-0.5 my-2 mx-4" />
       {props.pages.map((page) => (
         <Link to={page.path} key={page.name}>
           <Button

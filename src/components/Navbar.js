@@ -54,7 +54,7 @@ export default function Navbar(props) {
         </Nav.End>
       </Nav>
 
-      <Divider className="h-1 m-0" />
+      <Divider className="h-0.5 m-0" />
     </>
   );
 }

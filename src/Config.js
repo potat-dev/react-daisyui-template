@@ -35,4 +35,10 @@ export const config = {
       icon: <CodeIcon className="h-6 w-6" />,
     },
   ],
+  masonryColumns: {
+    default: 4,
+    960: 3,
+    730: 2,
+    500: 1,
+  },
 };

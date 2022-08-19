@@ -1,0 +1,13 @@
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  @apply flex w-auto -ml-4;
+}
+
+.my-masonry-column {
+  @apply pl-4 bg-clip-padding;
+}
+
+.my-masonry-column > div {
+  @apply mb-4;
+}

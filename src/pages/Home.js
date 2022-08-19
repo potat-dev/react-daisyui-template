@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Typography from "../components/Typography";
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
         </ul>
       </p>
       <p>
-        You can find the <a href="/about">about</a> page here.
+        You can find the <Link to="/about">about</Link> page here.
       </p>
     </Typography>
   );
